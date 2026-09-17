@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { Suspense, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { apiClient } from "@/lib/api-client";
 
-export default function MfaVerifyPage() {
+function MfaVerifyContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -282,5 +282,17 @@ export default function MfaVerifyPage() {
         © {new Date().getFullYear()} DelaHR Inc. Universal Multi-Tenant Enterprise HRMS & Payroll.
       </footer>
     </div>
+  );
+}
+
+export default function MfaVerifyPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-[var(--cool-gray)]">
+        <div className="h-8 w-8 rounded-full border-2 border-emerald-500 border-t-transparent animate-spin" />
+      </div>
+    }>
+      <MfaVerifyContent />
+    </Suspense>
   );
 }

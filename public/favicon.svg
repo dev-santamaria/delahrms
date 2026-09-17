@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Rounded Base Background -->
+  <rect width="64" height="64" rx="16" fill="#065F46" />
+  
+  <!-- Subtle Internal Accent Stroke -->
+  <rect x="2" y="2" width="60" height="60" rx="14" stroke="#10B981" stroke-opacity="0.35" stroke-width="2" />
+  
+  <!-- Modern Geometric 'D' for DelaHR -->
+  <path d="M20 18H32C39.732 18 46 24.268 46 32C46 39.732 39.732 46 32 46H20V18ZM28 25V39H32C35.866 39 39 35.866 39 32C39 28.134 35.866 25 32 25H28Z" fill="#FFFFFF" />
+  
+  <!-- Growth & Productivity Vibrant Mint Indicator Dot -->
+  <circle cx="45" cy="19" r="4.5" fill="#10B981" />
+</svg>

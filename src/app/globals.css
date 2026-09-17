@@ -1,26 +1,98 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import "flag-icons/css/flag-icons.min.css";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-satoshi), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  --font-heading: var(--font-satoshi), sans-serif;
+
+  /* Growth & Productivity Enterprise Palette */
+  --color-cool-gray: #F9FAFB;
+  --color-emerald-deep: #065F46;
+  --color-emerald-deep-hover: #044E3A;
+  --color-emerald-mint: #10B981;
+  --color-emerald-light: #ECFDF5;
+  --color-emerald-border: #A7F3D0;
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* Growth & Productivity Palette */
+  --cool-gray: #F9FAFB;
+  --emerald-deep: #065F46;
+  --emerald-deep-hover: #044E3A;
+  --emerald-mint: #10B981;
+  --emerald-light: #ECFDF5;
+  --emerald-border: #A7F3D0;
+  --gray-border: #E5E7EB;
+  --gray-text: #111827;
+  --gray-muted: #4B5563;
+  --gray-light: #9CA3AF;
+
+  /* Standard Application Semantic Tokens */
+  --background: #F9FAFB;
+  --foreground: #111827;
+  --card: #FFFFFF;
+  --card-foreground: #111827;
+  --popover: #FFFFFF;
+  --popover-foreground: #111827;
+  --primary: #065F46;
+  --primary-foreground: #FFFFFF;
+  --secondary: #ECFDF5;
+  --secondary-foreground: #065F46;
+  --muted: #F3F4F6;
+  --muted-foreground: #4B5563;
+  --accent: #10B981;
+  --accent-foreground: #FFFFFF;
+  --destructive: #DC2626;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #10B981;
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-color: var(--cool-gray);
+    color: var(--gray-text);
+  }
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Tabular figures for exact numerical alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-geist-mono), monospace;
 }
